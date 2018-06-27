@@ -17,6 +17,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
+    binding.pry
     erb :index
   end
 end
