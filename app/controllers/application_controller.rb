@@ -17,13 +17,17 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    @post = Post.create(name: params[:name], content: params[:content])
-    @post.save
+    @new_post = Post.create(name: params[:name], content: params[:content])
+    @new_post.save
     redirect '/posts'
   end
 
   get '/posts' do
     @posts = Post.all
     erb :index
+  end
+
+  get '/posts/:id' do
+    @post =
   end
 end
